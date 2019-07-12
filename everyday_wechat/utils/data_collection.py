@@ -49,14 +49,18 @@ def get_bot_info(message, userId=''):
     :return:str, 回复的话
     """
     channel = get_yaml().get('bot_channel', 3)
-    source = BOT_NAME_DICT.get(channel, 'qingyunke')
-    if source:
+
+    tuling = importlib.import_module('everyday_wechat.control.bot.' + "tuling123", __package__)
+    reply_msg = tuling.get_auto_reply(message, userId)
+
+    if reply_msg == None:
+        source = BOT_NAME_DICT.get(channel, 'qingyunke')
         addon = importlib.import_module('everyday_wechat.control.bot.' + source, __package__)
         reply_msg = addon.get_auto_reply(message, userId)
-        return reply_msg
+    return reply_msg
     # reply_msg = get_tuling123(message)
     # if not reply_msg:
-    #     # reply_msg = get_qingyunke(message)
+    #     reply_msg = get_qingyunke(message)
     #     reply_msg = get_yigeai(message)
 
     return None

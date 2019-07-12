@@ -14,7 +14,7 @@ bot_channel: 3
 #图灵机器人(http://www.tuling123.com/)免费用户每天可用 100 条。
 #请在官网注册并申请 apikey ,userID。
 turing_conf:
-  apiKey: ''
+  apiKey: 'bf58a4b4317d423599e7853c2f616b74'
 
 
 # 一个 Al (http://www.yige.ai/),这个功能挺多的，朋友们自行申请，训练。
